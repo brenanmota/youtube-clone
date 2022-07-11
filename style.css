@@ -63,11 +63,23 @@ header {
     text-decoration: none;
 }
 
+.subscribe .button {
+    border: none;
+    background-color: #c00;
+    color: white;
+    padding: 10px 16px;
+    text-transform: uppercase;
+
+
+}
+
 main {    
     margin: auto;
 
     display: grid;      
     grid-row-gap: 1rem;
+    margin-top: 1.5rem;
+
 
     grid-template-areas: 
       'video-player    video-player'
@@ -102,6 +114,7 @@ main {
    grid-area: video-info;    
 
    padding: 0 0 1rem 1rem;
+   height: 200%;
 }
 
 .video-info h1 {
@@ -150,17 +163,90 @@ main {
 
 
 .channel {
-    background-color: #673ab7;
+    grid-area: channel;
+
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    grid-gap: 1rem;
+        
+}
+
+.channel img {
+    width: 48px;
+    border-radius: 50%;
+}
+
+.channel .channel-name {
+    margin-top: 0.5rem;
+
+}
+    
+.channel .channel-subscribers{
+    margin-top: 0.2rem;
+}
+
+.channel .channel-description {
+    margin-top: 1.5rem;
 }
 
 .subscribe {
-    background-color: #8bc34a;
-    grid-area: subscribe;    
+    grid-area: subscribe;  
+    padding: 3rem 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
 }
 
 .ad {
-    background-color: #ff5722;
-    grid-area: ad;   
+    display: grid;
+    grid-template-columns: auto auto;  
+    margin-left: 1.5rem;
+}
+
+.ad .ad-info {
+    /* font-size: 0.7rem;  */  
+}
+
+.ad img {
+    width: 140px;
+}
+
+.ad .ad-name {
+    margin: 0 0 0.5rem 0.5rem;
+    
+}
+
+.ad .ad-name-link{
+    text-decoration: none;
+    color:#222
+
+}
+
+.ad .ad-description {
+    margin: 0 0 0.5rem 0.5rem;
+}
+
+.font-size-7 {
+    font-size: 0.7rem;
+
+}
+
+/* .ad .ad {
+    margin: 0 0 0.5rem 0.5rem;
+    font-size: 0.7rem;
+} */
+
+.ad .button{
+    border: none;
+    background-color: #fbc02d;
+    color: white;
+    padding: 3px 5px;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0.5rem;
+
 }
 
 .up-next {
