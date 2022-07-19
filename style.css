@@ -24,6 +24,7 @@ header {
 
 .logo img {
     width: 100px;
+    margin-left: 3.5rem;
 }
 
 .search {
@@ -69,8 +70,7 @@ header {
     color: white;
     padding: 10px 16px;
     text-transform: uppercase;
-
-
+    font-size: 0.8rem;
 }
 
 main {    
@@ -78,9 +78,7 @@ main {
 
     display: grid;      
     grid-row-gap: 1rem;
-    margin-top: 1.5rem;
-
-
+    
     grid-template-areas: 
       'video-player    video-player'
       'video-info      video-info'
@@ -92,7 +90,7 @@ main {
 
 .video-player {
     grid-area: video-player; 
-    
+    margin-top: 2rem;
     position: relative;
     padding: 1rem 0 56.25% 1rem;
     height: 0;
@@ -111,10 +109,9 @@ main {
 }
 
 .video-info {
-   grid-area: video-info;    
-
-   padding: 0 0 1rem 1rem;
-   height: 200%;
+   grid-area: video-info; 
+   border-bottom: 1px solid #ddd;
+   padding: 0 0 1rem 1rem;   
 }
 
 .video-info h1 {
@@ -131,7 +128,7 @@ main {
 .actions {
     grid-area: actions;  
     
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: 0 1rem 0.5rem 1rem;
     color: #636363;
 
@@ -164,15 +161,17 @@ main {
 
 .channel {
     grid-area: channel;
-
-    padding: 1rem;
     border-bottom: 1px solid #ddd;
-
+    padding: 1rem;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: start;
-    grid-gap: 1rem;
-        
+    grid-gap: 1rem;        
+}
+
+.channel a {
+    text-decoration: none;
+    color:rgb(53, 52, 52)
 }
 
 .channel img {
@@ -195,34 +194,29 @@ main {
 
 .subscribe {
     grid-area: subscribe;  
-    padding: 3rem 1rem;
-    border-bottom: 1px solid #ddd;
+    padding: 1rem 1rem;
     text-align: right;
+    border-bottom: 1px solid #ddd;
 }
 
 .ad {
     display: grid;
     grid-template-columns: auto auto;  
     margin-left: 1.5rem;
-}
-
-.ad .ad-info {
-    /* font-size: 0.7rem;  */  
+    margin-top: 2rem;
 }
 
 .ad img {
     width: 140px;
 }
 
-.ad .ad-name {
-    margin: 0 0 0.5rem 0.5rem;
-    
-}
-
 .ad .ad-name-link{
     text-decoration: none;
     color:#222
+}
 
+.ad .ad-name {
+    margin: 0 0 0.5rem 0.5rem;    
 }
 
 .ad .ad-description {
@@ -231,13 +225,7 @@ main {
 
 .font-size-7 {
     font-size: 0.7rem;
-
 }
-
-/* .ad .ad {
-    margin: 0 0 0.5rem 0.5rem;
-    font-size: 0.7rem;
-} */
 
 .ad .button{
     border: none;
@@ -246,13 +234,35 @@ main {
     padding: 3px 5px;
     text-transform: uppercase;
     margin: 0 0 0.5rem 0.5rem;
-
 }
 
-.up-next {
-    background-color: #3f51b5;
-    grid-area: up-next;     
+.up-next {    
+    grid-area: up-next; 
+    margin: 0.3rem 1.5rem;
 }
+
+.up-next a { 
+    display: grid;
+    grid-template-columns:  4fr 5fr;
+    grid-gap: 0.5rem;
+    padding-bottom: 0.75rem;
+    text-decoration: none;
+    color:#222
+}
+
+.up-next img {
+    width: 100%;
+}
+
+.up-next h3 {
+    margin: 0 0 0.5rem 0.5rem;  
+    text-transform: uppercase;         
+}
+
+.up-next p {
+    margin: 0 0 0.5rem 0.5rem;  
+}
+
 
 @media screen and (max-width:700px) {
     .search, .ad {
@@ -265,12 +275,19 @@ main {
         grid-template-columns: auto auto auto;
     } 
     main {
-        max-width: 1200px;
+        max-width: 1900px;
+        
+        grid-template-columns: 800px 400px 500px;
 
         grid-template-areas: 
         'video-player    video-player ad'  
         'video-player    video-player up-next'         
         'video-info      actions      up-next'        
-        'channel         subscribe    up-next';            
+        'channel         subscribe    up-next'
+        '.               .            up-next';            
     }    
+
+    .video-info {
+        border-bottom: 1px solid #ddd;
+    }
 }
